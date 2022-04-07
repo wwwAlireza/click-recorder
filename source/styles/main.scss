@@ -1,0 +1,129 @@
+@import "_basics";
+@import "_animations";
+@import "_colors";
+
+.recordAlert{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    .circle{
+        width: 10px;
+        height: 10px;
+        background-color: $red;
+        border-radius: 50%;
+        animation-name: recordCircleAnim;
+        animation-iteration-count: infinite;
+        animation-duration: .5s;
+        animation-timing-function: cubic-bezier(1,0,0,1);
+    }
+    .title{
+        @include sansFont();
+        font-weight: bold;
+        color: $mainText;
+    }
+}
+
+.controlContainer{
+    width: 110px;
+    height: 60px;
+    background-color: $controlsContainer;
+    border-radius: 15px;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0px 0px 25px 0px rgba($color: #000000, $alpha: .4);
+    color: $mainText;
+    transition: width .2s;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    &:hover{
+        width: 130px;
+    }
+}
+
+.buttonsContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+    top: 4px;
+}
+
+.button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba($color: #fff, $alpha: .8);
+    border-radius: 50%;
+    position: relative;
+    display: grid;
+    place-content: center;
+    .icon{
+        transition: .3s;
+    }
+    &:hover{
+        .icon{
+            transform: scale(1.2);
+            &:active{
+                transform: scale(.7)
+            }
+        }
+    }
+}
+
+.recordTime{
+    @include sansFont();
+    position: relative;
+    top: 5px;
+}
+
+#recordButton{
+    left: 0;
+    transition: left .2s;
+    .recordIcon{
+        width: 15px;
+        height: 15px;
+        background-color: $red;
+        border-radius: 50%;
+    }
+    .stopRecordIcon{
+        width: 14px;
+        height: 14px;
+        background-color: $red;
+        border-radius: 2px;
+    }
+}
+
+#playButton{
+    right: 0;
+    transition: right .2s;
+    .stopIcon{
+        width: 14px;
+        height: 14px;
+        background-color: $red;
+        border-radius: 2px;
+    }
+}
+
+.clickPoint{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    @include sansFont();
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: rgba($color: #000000, $alpha: .4);
+    animation-name: showPoint;
+    animation-duration: .2s;
+    animation-timing-function: linear;
+}

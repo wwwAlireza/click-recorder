@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #122333;
+  position: fixed;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.hide {
+  -webkit-animation-name: hideAnim;
+          animation-name: hideAnim;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.left-25 {
+  left: 25% !important;
+}
+
+.right-25 {
+  right: 25% !important;
+}
+
+@-webkit-keyframes recordCircleAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes recordCircleAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes hideAnim {
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes hideAnim {
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes showPoint {
+  from {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes showPoint {
+  from {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.recordAlert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.recordAlert .circle {
+  width: 10px;
+  height: 10px;
+  background-color: #FF0000;
+  border-radius: 50%;
+  -webkit-animation-name: recordCircleAnim;
+          animation-name: recordCircleAnim;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
+          animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.recordAlert .title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+.controlContainer {
+  width: 110px;
+  height: 60px;
+  background-color: #182A3B;
+  border-radius: 15px;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  -webkit-transition: width .2s;
+  transition: width .2s;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.controlContainer:hover {
+  width: 130px;
+}
+
+.buttonsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  position: relative;
+  top: 4px;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.button .icon {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.button:hover .icon {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.button:hover .icon:active {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+.recordTime {
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  top: 5px;
+}
+
+#recordButton {
+  left: 0;
+  -webkit-transition: left .2s;
+  transition: left .2s;
+}
+
+#recordButton .recordIcon {
+  width: 15px;
+  height: 15px;
+  background-color: #FF0000;
+  border-radius: 50%;
+}
+
+#recordButton .stopRecordIcon {
+  width: 14px;
+  height: 14px;
+  background-color: #FF0000;
+  border-radius: 2px;
+}
+
+#playButton {
+  right: 0;
+  -webkit-transition: right .2s;
+  transition: right .2s;
+}
+
+#playButton .stopIcon {
+  width: 14px;
+  height: 14px;
+  background-color: #FF0000;
+  border-radius: 2px;
+}
+
+.clickPoint {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 50%;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.4);
+  -webkit-animation-name: showPoint;
+          animation-name: showPoint;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+/*# sourceMappingURL=main.css.map */

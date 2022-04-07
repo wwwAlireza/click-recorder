@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Click Recorder</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="source/styles/main.css">
+</head>
+<body>
+
+    <!-- record alert -->
+    <div class="recordAlert d-none">
+        <div class="circle"></div>
+        <span class="title">Click Rec</span>
+    </div>
+    <!-- record controls -->
+    <div class="controlContainer">
+        <!-- buttons -->
+        <div class="buttonsContainer">
+            <div id="recordButton" class="button">
+                <div class="recordIcon icon"></div>
+                <div class="stopRecordIcon icon d-none"></div>
+            </div>
+
+            <div id="playButton" class="button">
+                <img class="playIcon icon" src="source/svg/play.svg" alt="play-icon" >
+                <img class="stopPlayIcon icon d-none" src="source/svg/pause.svg" alt="stop-icon" >
+            </div>
+        </div>
+        <!-- time -->
+        <div class="recordTime d-none">
+            <span class="minute">00</span> 
+            :
+            <span class="second">00</span>
+            :
+            <span class="millisecond">00</span>
+        </div>
+    </div>
+</body>
+    <script src="source/scripts/data.js"></script>
+    <script src="source/scripts/main.js" type="module"></script>
+</html>

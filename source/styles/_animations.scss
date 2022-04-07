@@ -1,0 +1,24 @@
+@keyframes recordCircleAnim {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes hideAnim {
+    to{
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes showPoint {
+    from{
+        transform: scale(.7);
+    }
+    to{
+        transform: scale(1);
+    }
+}

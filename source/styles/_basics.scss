@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@mixin sansFont {
+    font-family: 'Open Sans', sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #122333;
+    position: fixed;
+}
+
+.d-none{
+    display: none !important;
+}
+
+.hide{
+    animation-name: hideAnim;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+}
+
+.left-25{
+    left: 25% !important;
+}
+
+.right-25{
+    right: 25% !important;
+}
