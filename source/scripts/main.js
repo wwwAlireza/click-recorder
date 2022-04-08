@@ -32,7 +32,7 @@ const checkPlayStatus = () => {
     if (playStatus) {
         stopPlay();
         playStatus = false;
-    } else {
+    } else if (clickedPoints.length != 0) {
         deletePoints();
         startPlay();
         playStatus = true;
